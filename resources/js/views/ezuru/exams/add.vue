@@ -171,13 +171,18 @@
                             </el-col>
                         <div>
                              <el-table :data="selected_questions">
+                                 <el-table-column align="center" label="#" width="60">
+      <template slot-scope="scope">
+        {{ scope.$index + 1 }}
+      </template>
+    </el-table-column>
                                   <el-table-column align="center" label="Question">
                                         <template slot-scope="scope">
                                             <p>{{ scope.row.title.replace( /<.*?>/g, '' ) }}</p>
                                         </template>
                                   </el-table-column>
 
-                                <el-table-column align="center" label="Delete">
+                                <el-table-column align="center" label="update">
                                     <template slot-scope="scope">
                                             <router-link :to="'/set-questions/questions/edit/'+scope.row.id">
                                                 <el-button type="warning" icon="el-icon-edit"></el-button>
@@ -298,7 +303,7 @@
                     this.mocks = ex ;
                 },
                saveExam(){
-                    if( 1 == 0 && this.selected_questions.length > 0 && this.selected_questions.length < this.exam.questions_count ){
+                    if( 1 == 0 && this.selected_questions.length > 0 && this.selected_questionsquestions.length < this.exam.questions_count ){
                         this.$message.error('Please Select More '+( this.exam.questions_count - this.selected_questions.length )+' Question');
                     }else{
                         var tm = this.exam.available_time ;

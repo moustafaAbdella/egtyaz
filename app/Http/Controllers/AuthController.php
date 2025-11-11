@@ -30,7 +30,7 @@ class AuthController extends Controller
         $credentials = $request->only('email', 'password');
         if ($token = $this->guard()->attempt($credentials)) {
             $userx = Auth::user();
-            $userx->token = $token ;
+            $userx->token = $token;
             return response()->json( new UserResource( $userx )  , Response::HTTP_OK)->header('Authorization', $token);
         }
         return response()->json(new JsonResponse([], 'login_error'), Response::HTTP_UNAUTHORIZED);

@@ -25,13 +25,12 @@ Vue.config.productionTip = false;
 window.vue = Vue;
 
 // { key: string, version?: string, libraries?: Array<string> }
-
-// new Vue({
-//     el: '#app',
-//     router,
-//     store,
-//     i18n,
-//     render: h => h(App),
-// });
+new Vue({
+    el: '#app',
+    router,
+    store,
+    i18n,
+    render: h => h(App),
+});
 
 console.log('Vue disabled temporarily for Blade migration');

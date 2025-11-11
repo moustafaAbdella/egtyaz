@@ -1,6 +1,6 @@
 /* eslint-disable */
 require('script-loader!file-saver');
-import XLSX from 'xlsx'
+import * as XLSX from 'xlsx';
 
 function generateArray(table) {
   var out = [];
@@ -122,22 +122,21 @@ export function export_table_to_excel(id) {
   var data = oo[0];
   var ws_name = "SheetJS";
 
-  var wb = new Workbook(),
-    ws = sheet_from_array_of_arrays(data);
+// تحويل المصفوفة لورقة باستخدام helper مكتبة xlsx
+const ws = XLSX.utils.aoa_to_sheet(data);
 
-  /* add ranges to worksheet */
-  // ws['!cols'] = ['apple', 'banan'];
-  ws['!merges'] = ranges;
+// إضافة merges لو موجودة (لاحظ decode_range صحيح إذا الميرجز معرفة كـ "A1:B2")
+if (ranges && ranges.length) {
+  ws['!merges'] = ranges.map(item => XLSX.utils.decode_range(item));
+}
 
-  /* add worksheet to workbook */
-  wb.SheetNames.push(ws_name);
-  wb.Sheets[ws_name] = ws;
+// إنشاء workbook عبر utils
+const wb = XLSX.utils.book_new();
+XLSX.utils.book_append_sheet(wb, ws, ws_name);
 
-  var wbout = XLSX.write(wb, {
-    bookType: 'xlsx',
-    bookSST: false,
-    type: 'binary'
-  });
+// كتابة الملف
+const wbout = XLSX.write(wb, { bookType: bookType || 'xlsx', bookSST: false, type: 'binary' });
+
 
   saveAs(new Blob([s2ab(wbout)], {
     type: "application/octet-stream"

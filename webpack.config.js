@@ -11,11 +11,16 @@ function resolve(dir) {
 
 module.exports = {
   resolve: {
-    extensions: ['.js', '.vue', '.json'],
+  extensions:[".*",".wasm",".mjs",".js",".jsx",".json",".vue"],
     alias: {
       vue$: 'vue/dist/vue.esm.js',
       '@': path.join(__dirname, '/resources/js'),
     },
+    fallback: {
+      "path": require.resolve("path-browserify"),
+      "timers": require.resolve("timers-browserify"),
+      // Add any other necessary fallbacks here
+    }
   },
   module: {
     rules: [

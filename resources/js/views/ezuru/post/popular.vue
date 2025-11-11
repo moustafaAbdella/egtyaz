@@ -19,7 +19,7 @@
                                         <div>
                                             <el-col :span="22">
                                                 <el-form-item label="Category">
-                                                    <el-select v-model="description.category" remote placeholder="Category ... type to search" @change="getSubjects" >
+                                                    <el-select v-model="description.category" remote placeholder="Category ... type to search" @change="getSubject" >
                                                             <el-option v-for="v in category_list" :key="v.id" :label="v.name" :value="parseInt(v.id)" />
                                                     </el-select>
                                                 </el-form-item>
@@ -162,7 +162,6 @@
 <script>
     import settings from '@/settings' ;
     import Tinymce from '@/components/Tinymce';
-    import { setTimeout } from 'timers';
 
     import permission from '@/directive/permission/index.js' ;
 

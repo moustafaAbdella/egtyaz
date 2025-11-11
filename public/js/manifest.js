@@ -120,7 +120,7 @@
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if ({"resources_js_views_redirect_index_vue":1,"resources_js_views_login_index_vue":1,"resources_js_views_login_AuthRedirect_vue":1,"resources_js_views_ErrorPage_404_vue":1,"resources_js_views_ErrorPage_401_vue":1,"resources_js_views_ezuru_dashboard_index_vue-node_modules_zrender_lib_canvas_Painter_js-node_-bc6fbf":1,"resources_js_views_ezuru_dashboard_stat_vue-node_modules_zrender_lib_canvas_Painter_js-node_m-146c7e":1,"resources_js_views_users_List_vue":1,"resources_js_views_users_Profile_vue":1,"resources_js_views_ezuru_users_List_vue":1,"resources_js_views_ezuru_users_profile_profile_vue":1,"resources_js_views_role-permission_List_vue":1,"resources_js_views_ezuru_flags_flags_vue":1,"resources_js_views_ezuru_taxonomy_taxonomy_vue":1,"resources_js_views_ezuru_packages_packages_vue":1,"resources_js_views_ezuru_copouns_copouns_vue":1,"resources_js_views_ezuru_questions_questions_vue":1,"resources_js_views_ezuru_questions_add_vue":1,"resources_js_views_ezuru_post_post_vue":1,"resources_js_views_ezuru_exams_exams_vue":1,"resources_js_views_ezuru_post_comp_vue":1,"resources_js_views_ezuru_exams_show_vue":1,"resources_js_views_ezuru_exams_add_vue":1,"resources_js_views_ezuru_child_vue":1,"resources_js_views_ezuru_course_course_vue":1,"resources_js_views_ezuru_settings_static_vue":1,"resources_js_views_ezuru_comment_comments_vue":1,"resources_js_views_ezuru_post_popular_vue":1,"resources_js_views_ezuru_payments_payments_vue":1,"resources_js_views_ezuru_log_log_vue":1,"resources_js_views_ezuru_contact_contact_vue":1,"resources_js_views_ezuru_tickets_tickets_vue":1,"resources_js_views_ezuru_settings_settings_vue":1,"resources_js_views_ezuru_languages_lang_vue":1,"resources_js_views_ezuru_notification_custom_vue":1,"resources_js_views_permission_Page_vue":1,"resources_js_views_permission_Directive_vue":1,"resources_js_vendor_Export2Excel_js":1}[chunkId]) return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_views_redirect_index_vue":1,"resources_js_views_login_index_vue":1,"resources_js_views_login_AuthRedirect_vue":1,"resources_js_views_ErrorPage_404_vue":1,"resources_js_views_ErrorPage_401_vue":1,"resources_js_views_ezuru_dashboard_index_vue":1,"resources_js_views_ezuru_dashboard_stat_vue":1,"resources_js_views_users_List_vue":1,"resources_js_views_users_Profile_vue":1,"resources_js_views_ezuru_users_List_vue":1,"resources_js_views_ezuru_users_profile_profile_vue":1,"resources_js_views_role-permission_List_vue":1,"resources_js_views_ezuru_flags_flags_vue":1,"resources_js_views_ezuru_taxonomy_taxonomy_vue":1,"resources_js_views_ezuru_packages_packages_vue":1,"resources_js_views_ezuru_copouns_copouns_vue":1,"resources_js_views_ezuru_questions_questions_vue":1,"resources_js_views_ezuru_questions_add_vue":1,"resources_js_views_ezuru_post_post_vue":1,"resources_js_views_ezuru_exams_exams_vue":1,"resources_js_views_ezuru_post_comp_vue":1,"resources_js_views_ezuru_exams_show_vue":1,"resources_js_views_ezuru_exams_add_vue":1,"resources_js_views_ezuru_child_vue":1,"resources_js_views_ezuru_course_course_vue":1,"resources_js_views_ezuru_settings_static_vue":1,"resources_js_views_ezuru_comment_comments_vue":1,"resources_js_views_ezuru_post_popular_vue":1,"resources_js_views_ezuru_payments_payments_vue":1,"resources_js_views_ezuru_log_log_vue":1,"resources_js_views_ezuru_contact_contact_vue":1,"resources_js_views_ezuru_tickets_tickets_vue":1,"resources_js_views_ezuru_settings_settings_vue":1,"resources_js_views_ezuru_languages_lang_vue":1,"resources_js_views_ezuru_notification_custom_vue":1,"resources_js_views_permission_Page_vue":1,"resources_js_views_permission_Directive_vue":1,"resources_js_vendor_Export2Excel_js":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};
@@ -131,7 +131,7 @@
 /******/ 		// This function allow to reference all chunks
 /******/ 		__webpack_require__.miniCssF = (chunkId) => {
 /******/ 			// return url for filenames based on template
-/******/ 			return undefined;
+/******/ 			return "" + chunkId + ".css";
 /******/ 		};
 /******/ 	})();
 /******/ 	
@@ -230,7 +230,8 @@
 /******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
-/******/ 			"/js/manifest": 0
+/******/ 			"/js/manifest": 0,
+/******/ 			"css/app": 0
 /******/ 		};
 /******/ 		
 /******/ 		__webpack_require__.f.j = (chunkId, promises) => {
@@ -242,7 +243,7 @@
 /******/ 					if(installedChunkData) {
 /******/ 						promises.push(installedChunkData[2]);
 /******/ 					} else {
-/******/ 						if("/js/manifest" != chunkId) {
+/******/ 						if(!/^(\/js\/manifest|css\/app)$/.test(chunkId)) {
 /******/ 							// setup Promise in chunk cache
 /******/ 							var promise = new Promise((resolve, reject) => (installedChunkData = installedChunks[chunkId] = [resolve, reject]));
 /******/ 							promises.push(installedChunkData[2] = promise);

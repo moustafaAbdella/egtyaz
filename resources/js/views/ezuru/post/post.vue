@@ -206,7 +206,6 @@
 <script>
     import settings from '@/settings' ;
     import Tinymce from '@/components/Tinymce';
-    import { setTimeout } from 'timers';
 
     import permission from '@/directive/permission/index.js' ;
 

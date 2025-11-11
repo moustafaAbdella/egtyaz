@@ -15,13 +15,13 @@ class CreatePackagesTable extends Migration
     {
         Schema::create('packages', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name')->nullable() ;
-            $table->integer('period')->default(365) ; // Period Per Day
-            $table->text('description')->nullable() ;
-            $table->Integer('price')->default(1) ;
-            $table->string('sale_type')->nullable() ;
-            $table->float('sale_amount')->nullable() ;
-            $table->TinyInteger('status')->default(1) ;
+            $table->string('name')->nullable();
+            $table->integer('period')->default(365); // Period in days
+            $table->text('description')->nullable();
+            $table->integer('price')->default(1);
+            $table->string('sale_type')->nullable();
+            $table->float('sale_amount')->nullable();
+            $table->tinyInteger('status')->default(1);
             $table->timestamps();
         });
     }

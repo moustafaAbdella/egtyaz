@@ -23,7 +23,6 @@ Object.keys(filters).forEach(key => {
 Vue.config.productionTip = false;
 
 window.vue = Vue;
-import 'element-plus/dist/index.css'
 // { key: string, version?: string, libraries?: Array<string> }
 new Vue({
     el: '#app',

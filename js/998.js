@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunklaravue=self.webpackChunklaravue||[]).push([[998],{6998:(e,u,l)=>{l.r(u),l.d(u,{default:()=>t});const t=(0,l(4486).A)({},function(){var e=this._self._c;return e("div",{attrs:{id:"nestedView"}},[e("router-view")],1)},[],!1,null,null,null).exports}}]);
